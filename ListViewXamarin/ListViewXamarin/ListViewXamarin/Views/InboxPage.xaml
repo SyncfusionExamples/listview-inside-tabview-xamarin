@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:local="clr-namespace:ListViewXamarin"
+             x:Class="TabViewSample.InboxPage">
+    
+    <ContentPage.BindingContext>
+        <local:ListViewInboxInfoRepository/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <sync:SfListView x:Name="listView" ItemsSource="{Binding InboxInfo}" ItemSize="100">
+            <sync:SfListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid x:Name="grid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1" />
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid Padding="5">
+                                <Label LineBreakMode="NoWrap" TextColor="#474747" FontAttributes="Bold" Text="{Binding Title}"/>
+                                <Label LineBreakMode="NoWrap" TextColor="#474747" Grid.Row="1" Text="{Binding Subject}"/>
+                                <Label TextColor="#474747" Grid.Row="2" LineBreakMode="NoWrap" Text="{Binding Description}"/>
+                            </Grid>
+                            <Label TextColor="#474747" Grid.Column="1" Padding="5,10,5,10" HorizontalOptions="End" LineBreakMode="NoWrap" Text="{Binding Date}"/>
+                        </Grid>
+                        <Frame Grid.Row="1" OutlineColor="#E4E4E4" HasShadow="True" HeightRequest="1"/>
+                    </Grid>
+                </DataTemplate>
+            </sync:SfListView.ItemTemplate>
+        </sync:SfListView>
+    </ContentPage.Content>
+</ContentPage>

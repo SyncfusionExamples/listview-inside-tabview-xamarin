@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ListViewXamarin"
+             xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+             x:Class="ListViewXamarin.MainPage"
+             Padding="{OnPlatform iOS='0,40,0,0'}">
+	
+    <ContentPage.Content>
+        <tabView:SfTabView VisibleHeaderCount="3" TabHeaderBackgroundColor="#dddddd">
+            <tabView:SfTabView.Behaviors>
+                <local:SfTabViewBehavior/>
+            </tabView:SfTabView.Behaviors>
+        </tabView:SfTabView>
+    </ContentPage.Content>
+</ContentPage>
